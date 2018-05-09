@@ -52,10 +52,10 @@
                   Chi Siamo
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Il Comitato</a>
-                  <a class="dropdown-item" href="#">Storia</a>
-                  <a class="dropdown-item" href="#">I 7 Principi</a>
-                  <a class="dropdown-item" href="#">Diritto Internazionale Umanitario</a>
+                  <a class="dropdown-item" href="comitato">Il Comitato</a>
+                  <a class="dropdown-item" href="storia">Storia</a>
+                  <a class="dropdown-item" href="principi">I 7 Principi</a>
+                  <a class="dropdown-item" href="diu">Diritto Internazionale Umanitario</a>
                 </div>
               </li>
           </div>
@@ -67,11 +67,11 @@
                   Cosa Facciamo
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Salute</a>
-                  <a class="dropdown-item" href="#">Sociale</a>
-                  <a class="dropdown-item" href="#">Emergenza</a>
-                  <a class="dropdown-item" href="#">Principi e Valori</a>
-                  <a class="dropdown-item" href="#">Giovani e Sviluppo</a>
+                  <a class="dropdown-item" href="salute">Salute</a>
+                  <a class="dropdown-item" href="sociale">Sociale</a>
+                  <a class="dropdown-item" href="emergenza">Emergenza</a>
+                  <a class="dropdown-item" href="principiValori">Principi e Valori</a>
+                  <a class="dropdown-item" href="giovaniSviluppo">Giovani e Sviluppo</a>
                 </div>
               </li>
           </div>
@@ -106,7 +106,7 @@
           <img class="d-block w-100" src="1.jpg" alt="First slide">
           <div class="carousel-caption d-none d-md-block">
             <h5>
-              <button type="button" class="btn btn-secondary btn-lg">DIVENTA VOLONTARIO</button>
+              <a href="diventaVolontario" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">DIVENTA VOLONTARIO</a>
             </h5>
             <p>Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel
               illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?</p>
@@ -116,7 +116,7 @@
           <img class="d-block w-100" src="4.jpg" alt="Second slide">
           <div class="carousel-caption d-none d-md-block">
             <h1>
-              <button type="button" class="btn btn-secondary btn-lg">CORSI DI FORMAZIONE</button>
+              <a href="corsiFormazione" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">CORSI DI FORMAZIONE</a>
             </h1>
             <p>Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel
               illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?</p>
@@ -126,21 +126,24 @@
           <img class="d-block w-100" src="3.jpg" alt="Third slide">
           <div class="carousel-caption d-none d-md-block">
             <h5>
-              <button type="button" class="btn btn-secondary btn-lg">RICHIEDI AMBULANZA</button>
+              <a href="richiediAmbulanza" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">RICHIEDI AMBULANZA</a>
             </h5>
             <p>Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel
               illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?</p>
           </div>
         </div>
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+      <div class="control">
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
     </div>
   </div>
 
@@ -152,7 +155,9 @@
         <div class="card">
           <img class="card-img-top" src=".../100px180/" alt="">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
+            <a class="card-title" href="">
+              <h1>News</h1>
+            </a>
             <p class="card-text">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
               aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
               Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
@@ -176,7 +181,9 @@
         <div class="card">
           <img class="card-img-top" src=".../100px180/" alt="">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
+            <a class="card-title" href="">
+              <h1>Foto Gallery</h1>
+            </a>
             <p class="card-text">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
               aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
               Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
@@ -197,7 +204,9 @@
         <div class="card">
           <img class="card-img-top" src=".../100px180/" alt="">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
+            <a class="card-title" href="">
+              <h1>Riferimenti Esterni</h1>
+            </a>
             <p class="card-text">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
               aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
               Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
