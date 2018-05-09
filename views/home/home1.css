@@ -1,0 +1,52 @@
+.header .row {
+    
+    border-bottom: 1px solid rgb(255, 0, 0);
+    text-align: center;
+    color: rgb(255, 0, 0)
+}
+
+.menu .containe-fluid {
+    background-color: rgb(255, 0, 0);
+    color: white;
+}
+.menu .navbar-collapse {
+    background-color: rgb(255, 0, 0);
+}
+.menu .navbar-collapse .dropdown-toggle {
+    color: rgb(255, 255, 255);
+}
+.menu .navbar-collapse .dropdown-toggle:hover {
+    color: rgb(161, 161, 161);
+}
+.menu .navbar-light a {
+    color: rgb(255, 255, 255);
+}
+
+.menu .navbar-light a:hover {
+    color: rgb(161, 161, 161);
+    background-color: red;
+}
+.menu .dropdown-menu {
+    background-color: whitesmoke;
+}
+.menu .dropdown-menu a {
+    color: red;
+}
+
+
+.carousel {
+    margin-left: 23px;
+    margin-right: 23px;
+}
+
+.carousel p {
+    background-color:rgba(100,100,100,0.8);
+}
+
+.footer .card-footer {
+    background-color: rgb(255, 0, 0);
+}
+
+.footer li {
+    color: white;
+}

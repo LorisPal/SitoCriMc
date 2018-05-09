@@ -1,0 +1,16 @@
+{
+  "name": "sitocri",
+  "version": "1.0.0",
+  "description": "website form Macerata's Red Cross",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Loris Palmucci",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.1.0",
+    "ejs": "^2.5.8",
+    "express": "^4.16.3"
+  }
+}
