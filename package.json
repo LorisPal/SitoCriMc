@@ -1,10 +1,11 @@
 {
-  "name": "sitocri",
+  "name": "sitocrimc",
   "version": "1.0.0",
   "description": "website form Macerata's Red Cross",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Loris Palmucci",
   "license": "ISC",
@@ -16,6 +17,16 @@
     "ejs": "^2.5.8",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
-    "nodemon": "^1.17.4"
-  }
+    "nodemon": "^1.17.4",
+    "sqlite3": "^4.0.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LorisPal/SitoCriMc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LorisPal/SitoCriMc/issues"
+  },
+  "homepage": "https://github.com/LorisPal/SitoCriMc#readme"
 }

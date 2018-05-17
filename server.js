@@ -4,6 +4,7 @@ var cookieSession = require('cookie-session');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var sqllite = require("./module/sqlite.js");
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/views'));
@@ -59,10 +60,23 @@ app.get('/amministrazione', checkAuthentication, function (req, res) {
     res.render('home/amministrazione');
 });
 
-app.post('/amministrazione', function(req,res){
-    req.session = null;
-    console.log("session close")
-    res.redirect('/amministrazioneLogin');
+    app.post('/logout', function(req,res){
+        req.session = null;
+        console.log("session close")
+        res.redirect('/');
+    });
+
+    app.post('/send', function(req,res){
+        console.log("sending data...")
+        sqllite.setNotizie();
+    });
+
+app.get('/new', function (req, res) {
+    sqllite.getNotizie(function(news) {
+        res.render('notizie/new', {
+            "notizie_cri": news
+        });
+    });
 });
 
 app.get('/sostienici', function (req, res) {
