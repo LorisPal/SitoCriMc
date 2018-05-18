@@ -70,11 +70,11 @@ app.get('/amministrazione', checkAuthentication, function (req, res) {
         res.redirect('/');
     });
     //scrittura su db
-    app.post('/amministrazione', function(req,res){
+    app.post('/notizie/new', function(req,res){
         console.log("sending data...")
-        titolo = "req.body.mail1";
-        testo = "req.body.pass2";
-        console.log(titolo,)
+        titolo = req.body.mail;
+        testo = req.body.pass;
+        console.log(titolo,testo)
         sqllite.setNotizie(titolo,testo);
     });
 

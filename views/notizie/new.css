@@ -1,0 +1,15 @@
+.header {
+    margin-bottom: 50px;
+}
+.header .row {
+    border-bottom: 1px solid rgb(255, 0, 0);
+    text-align: center;
+    color: rgb(255, 0, 0)
+}
+
+.jumbotron {
+    border-style: solid;
+    border-color: rgb(255, 0, 0);
+    border-radius: 20px;
+    border-width: 1px;
+}
