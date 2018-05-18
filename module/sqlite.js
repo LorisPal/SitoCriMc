@@ -26,14 +26,15 @@ module.exports = {
     db.close();
     },
 
-    setNotizie: function() { //callback in caso di lettura dati da un componente da inviare poi al post????
+    setNotizie: function(a,b) { //callback in caso di lettura dati da un componente da inviare poi al post????
         let db = new sqlite3.Database('./sitoCri.db');
         let news = {};
-        let sql = 'insert into NEWS values ("metodo scrittura db","è stato inserito un primo metodo di scrittura sul db in hard code")';
-
-        db.run(sql, function(err){
+      
+        let sql = `INSERT INTO NEWS(TITOLO,TESTO) VALUES(?,?)`;
+        db.run(sql, [a,b], function(err){
             if(err) {
                 throw err;
+                console.log('errore di connessione al db')
             }
 
             console.log('inserimento dati corretto')

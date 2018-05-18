@@ -6,11 +6,12 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var sqllite = require("./module/sqlite.js");
 
+/* setta i percorsi di immagini e pagine */
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/img')); //contiene tutte le immagini
 
-//route pagine
+/* Porzione di codice adibita a creare una sessione di login amministratore autenticata */
 app.get('/', function (req, res) {
     res.render('home/home1');
 });
@@ -27,6 +28,7 @@ app.use(cookieSession({
     keys: ['username']
   }))
 
+  //funzione di autenticazione chiamata al momento del login
   var checkAuthentication = function(req,res,next){
       if(req.session && req.session.admin_user){
           next();
@@ -38,39 +40,45 @@ app.use(cookieSession({
 app.get('/amministrazioneLogin', function (req, res) {
     res.render('home/amministrazioneLogin');
 });
-app.post('/amministrazioneLogin', function(req,res){
-    user = req.body.email;
-    password = req.body.password;
-    session = req.session;
-    console.log(user, password)
+    //verifica se i dati immessi dall'utente corrispondono a quelli dell'amministratore
+    app.post('/amministrazioneLogin', function(req,res){
+        user = req.body.email;
+        password = req.body.password;
+        session = req.session;
+        console.log(user, password)
 
-    if(user == admin_user.user && password == admin_user.pass){
-        session.admin_user = admin_user;
-        console.log("user authenticated")
-        console.log('session',session)
-        res.redirect('/amministrazione');
-    }else {
-        console.log("user not authenticated")
-        console.log('session',session)
-        res.redirect('/amministrazioneLogin');
-    }
-});
+        if(user == admin_user.user && password == admin_user.pass){
+            session.admin_user = admin_user;
+            console.log("user authenticated")
+            console.log('session',session)
+            res.redirect('/amministrazione');
+        }else {
+            console.log("user not authenticated")
+            console.log('session',session)
+            res.redirect('/amministrazioneLogin');
+        }
+    });
 
+/* sezione dedidicata all'utente amministratore con vari servizi disponibili */
 app.get('/amministrazione', checkAuthentication, function (req, res) {
     res.render('home/amministrazione');
 });
-
+    //logout dalla sessione
     app.post('/logout', function(req,res){
         req.session = null;
         console.log("session close")
         res.redirect('/');
     });
-
-    app.post('/send', function(req,res){
+    //scrittura su db
+    app.post('/amministrazione', function(req,res){
         console.log("sending data...")
-        sqllite.setNotizie();
+        titolo = "req.body.mail1";
+        testo = "req.body.pass2";
+        console.log(titolo,)
+        sqllite.setNotizie(titolo,testo);
     });
 
+/* sezione dedicata alla visualizzazione delle notizie pubblicate dall'amministratore */
 app.get('/new', function (req, res) {
     sqllite.getNotizie(function(news) {
         res.render('notizie/new', {
