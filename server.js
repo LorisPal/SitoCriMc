@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var sqllite = require("./module/sqlite.js");
+'use strict';
+const nodemailer = require('nodemailer');
 
 /* setta i percorsi di immagini e pagine */
 app.set('view engine', 'ejs');
@@ -17,8 +19,8 @@ app.get('/', function (req, res) {
 });
 
 const admin_user = {
-    user: "", //inserire una mail valida
-    pass: ""  //inserire una password
+    user: "admin@admin.it", //inserire una mail valida
+    pass: "admin"  //inserire una password
   }
 
 app.use(bodyParser.json());
@@ -64,7 +66,7 @@ app.get('/amministrazione', checkAuthentication, function (req, res) {
     res.render('home/amministrazione');
 });
     //logout dalla sessione
-    app.post('/logout', function(req,res){
+    app.post('/', function(req,res){
         req.session = null;
         console.log("session close")
         res.redirect('/');
@@ -72,11 +74,50 @@ app.get('/amministrazione', checkAuthentication, function (req, res) {
     //scrittura su db
     app.post('/notizie/new', function(req,res){
         console.log("sending data...")
-        titolo = req.body.mail;
-        testo = req.body.pass;
+        titolo = req.body.titolo;
+        testo = req.body.testo;
         console.log(titolo,testo)
         sqllite.setNotizie(titolo,testo);
     });
+
+app.post('/send', function(req,res) {
+    // Generate test SMTP service account from ethereal.email
+// Only needed if you don't have a real mail account for testing
+nodemailer.createTestAccount((err, account) => {
+    // create reusable transporter object using the default SMTP transport
+    const transporter = nodemailer.createTransport({
+    host: 'smtp.ethereal.email',
+    port: 587,
+    auth: {
+        user: 'lcqvdtonbylnerkj@ethereal.email',
+        pass: '7bKJF68nMygJ2fQmMx'
+    }
+});
+
+    // setup email data with unicode symbols
+    let mailOptions = {
+        from: 'lcqvdtonbylnerkj@ethereal.email', // sender address
+        to: 'generalle913@gmail.com', // list of receivers
+        subject: 'Hello ✔', // Subject line
+        text: 'Hello world?', // plain text body
+        html: '<b>Hello world?</b>' // html body
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Message sent: %s', info.messageId);
+        // Preview only available when sending through an Ethereal account
+        console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+
+        // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+        // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+    });
+});
+
+})
 
 /* sezione dedicata alla visualizzazione delle notizie pubblicate dall'amministratore */
 app.get('/new', function (req, res) {

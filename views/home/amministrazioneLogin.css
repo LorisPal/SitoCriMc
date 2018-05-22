@@ -1,0 +1,34 @@
+.header .row {
+    border-bottom: 1px solid rgb(255, 0, 0);
+    text-align: center;
+    color: rgb(255, 0, 0)
+}
+
+.row .form-group input {
+    color: #fefafa;
+    opacity: 1;
+    background-color: #ff7373;
+}
+
+.row .container-fluid {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-style: solid;
+    border-color: red;
+    border-width: 1px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+.container-fluid .btn-primary-login {
+    color: #fff;
+    background-color: #ff0b0b;
+    border-color: #1b1b1b;
+    border-top-width: 0px;
+}
+.container-fluid .btn-primary-home {
+    color: #00000080;
+    background-color: #0000004d;
+    border-color: #000;
+    border-top-width: 0px;
+}

@@ -30,30 +30,32 @@
       </div>
     </div>
   </div>
-<tbody>
-    <% notizie_cri.forEach(function(notizie) { %>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm">   
-      </div>
-      <div class="col-md-15">
-          <div class="container-fluid">
+  <tbody>
+    <div class="container">
+      <div class="col-sm"> </div>
+      <div class="col-md">
+        <% notizie_cri.forEach(function(notizie) { %>
+          <div class="row">
+            <div class="container-fluid">
               <div class="jumbotron">
-                  <h1 class="display-4"><%=notizie.titolo %></h1>
-                  <p class="lead">data e ora</p>
-                  <hr class="my-4">
-                  <p><%=notizie.testo %></p>
-                  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-                </div>
+                <h1 class="display-4">
+                  <%=notizie.titolo %>
+                </h1>
+                <p class="lead">data e ora</p>
+                <hr class="my-4">
+                <p>
+                  <%=notizie.testo %>
+                </p>
+                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+              </div>
             </div>
+          </div>
+          <% }); %>
       </div>
-      <div class="col-sm">
-        
-      </div>
+      <div class="col-sm"></div>
     </div>
-  </div>
-  <% }); %>
-</tbody>
+    </div>
+  </tbody>
   <!-- 
      <div class="container">
         <table class="table">
