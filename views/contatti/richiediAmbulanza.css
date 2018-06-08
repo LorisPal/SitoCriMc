@@ -1,0 +1,42 @@
+.header .row {
+    border-bottom: 1px solid rgb(255, 0, 0);
+    text-align: center;
+    color: rgb(255, 0, 0)
+}
+
+.row .input-group input {
+    color: #fefafa;
+    opacity: 1;
+    background-color: #ff7373;
+}
+
+.row .input-group-prepend textarea {
+    color: #fefafa;
+    opacity: 1;
+    background-color: #ff7373;
+}
+
+.row .btn-primary-login {
+    color: #fff;
+    background-color: #ff0b0b;
+    border-color: #1b1b1b;
+    border-top-width: 0px;
+}
+.row .btn-primary-home {
+    color: #00000080;
+    background-color: #0000004d;
+    border-color: #000;
+    border-top-width: 0px;
+}
+
+.nav-pills {
+    display: block;
+}
+
+.footer .card-footer {
+    background-color: rgb(255, 0, 0);
+}
+
+.footer li {
+    color: white;
+}

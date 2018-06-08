@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
     crossorigin="anonymous">
   <link rel="stylesheet" href="home/amministrazione.css">
+  
 
   <title>Hello, world!</title>
 </head>
@@ -36,9 +37,15 @@
   </div>
 
   <div class="row">
-    <div class="col-md"></div>
     <div class="col-md">
-      <form action="/notizie/new" method="POST">
+      <ul class="nav nav-pills nav-fill" >
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#addCourse">Aggiungi un Corso</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#addPost">Aggiungi un Post</a></li>
+      </ul>
+    </div>
+    <div class="col-md">
+      <div class="tab-content">
+        <form action="/notizie/new" id="addPost" class="tab-pane fade" method="POST">
         <div class="form-group">
           <div class="input-group mb-3">
             <input type="text" class="form-control" name="titolo" placeholder="Recipient's username" aria-label="Recipient's username"
@@ -53,13 +60,23 @@
           </div>
         </div>
       </form>
+      <div id="addCourse" class="tab-pane fade">
+        <h6>Aggiungi Corso</h6>
+      </div>
       <form action="/" method="POST">
         <button type="submit" class="btn btn-primary-login">Logout</button>
+        <a href="/" class="btn btn-primary-home" role="button" aria-pressed="true">Home Page</a>
       </form>
-      <a href="/" class="btn btn-primary-home" role="button" aria-pressed="true">Home Page</a>
+      
+      </div>
+      
     </div>
     <div class="col-md"></div>
   </div>
+
+  <form action="/send" method="POST">
+    <button type="submit" class="btn btn-primary-login">Mail</button>
+  </form>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

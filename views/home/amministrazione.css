@@ -28,3 +28,7 @@
     border-color: #000;
     border-top-width: 0px;
 }
+
+.nav-pills {
+    display: block;
+}

@@ -31,14 +31,15 @@
     </div>
   </div>
   <tbody>
-    <div class="container">
-      <div class="col-sm"> </div>
+    <div class="row">
+      <div class="col-sm-2">
+      </div>
       <div class="col-md">
         <% notizie_cri.forEach(function(notizie) { %>
           <div class="row">
             <div class="container-fluid">
               <div class="jumbotron">
-                <h1 class="display-4">
+                <h1 class="display-6">
                   <%=notizie.titolo %>
                 </h1>
                 <p class="lead">data e ora</p>
@@ -52,36 +53,9 @@
           </div>
           <% }); %>
       </div>
-      <div class="col-sm"></div>
-    </div>
+      <div class="col-sm-2"></div>
     </div>
   </tbody>
-  <!-- 
-     <div class="container">
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">TITOLO</th>
-                <th scope="col">TESTO</th>
-               
-              </tr>
-              </thead>
-            <tbody>
-              <% notizie_cri.forEach(function(notizie) { %>
-               <tr>
-                <td class="align-baseline"><%=notizie.titolo %></td>
-                <td class="align-top"><%= notizie.testo %></td>
-              </tr>
-              <% }); %>
-            </tbody>
-          </table>
-    </div>
-    <form>
-        <a href="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Home Page</a>
-    </form> 
-     -->
-
-
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

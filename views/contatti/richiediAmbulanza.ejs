@@ -1,13 +1,197 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="contatti/richiediAmbulanza.css">
+
+
+    <title>Hello, world!</title>
 </head>
+
 <body>
-    <h1>RICHIEDI AMBULANZA</h1>
+    <div class="row">
+        <div class="col-md">
+            <ul class="nav nav-pills nav-fill">
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#programmato">Trasporti Programmati</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#sportivo">Assistenze Sportive</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#addPost">Assistenze Manifestazioni</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#addPost">Taxy Sanitario</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md">
+            <div class="tab-content">
+                <form action="/contatti/richiediAmbulanza" value="programmato" id="programmato" class="tab-pane fade" method="POST">
+                    <div>
+                        <h1>Modulo Trasporto programmato</h1>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                            </div>
+                            <input type="text" class="form-control" name="trasporto" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+                    <label>Nome Paziente</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                        </div>
+                        <input type="text" class="form-control" name="nome" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <label>Cognome Paziente</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                        </div>
+                        <input type="text" class="form-control" name="cognome" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <label>Prestazione Sanitaria</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                        </div>
+                        <input type="text" class="form-control" name="prestazione" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <label>Ora Inizio - Ora Fine</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                        </div>
+                        <input type="text" class="form-control" name="ora" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <label>Indirizzo/Struttura Partenza</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                        </div>
+                        <input type="text" class="form-control" name="partenza" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <label>Indirizzo/Struttura Destinazione</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                        </div>
+                        <input type="text" class="form-control" name="destinazione" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <button type="submit" class="btn btn-primary-login">Mail</button>
+                </form>
+
+
+
+
+
+                <form action="/contatti/richiediAmbulanza" value="sportivo" id="sportivo" class="tab-pane fade" method="POST">
+                    <div>
+                        <h1>Modulo Assistenze Sportive</h1>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                        </div>
+                        <input type="text" class="form-control" name="trasporto" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <label>Tipologia Evento Sportivo</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                        </div>
+                        <input type="text" class="form-control" name="evento" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <label>Luogo Evento</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                        </div>
+                        <input type="text" class="form-control" name="luogo" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <label>Indirizzo Struttura Ospitante</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                        </div>
+                        <input type="text" class="form-control" name="partenza" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <label>Ora Inizio - Ora Fine</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                        </div>
+                        <input type="text" class="form-control" name="ora" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <button type="submit" class="btn btn-primary-login">Mail</button>
+                </form>
+
+                <a href="/" class="btn btn-primary-home" role="button" aria-pressed="true">Home Page</a>
+
+            </div>
+
+
+
+        </div>
+        <div class="col-md"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
 </body>
 
+<!--footer-->
 <div class="footer">
-    <p>Croce Rossa Italiana - Comitato Locale Macerata (Marche)</p>
-  </div>
+    <div class="card-footer">
+        <div class="header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-auto">
+                        <small class="text-muted">
+                            <li>
+                                e-mail: www.crimc.it
+                            </li>
+                            <li>
+                                FAX: 021 54 86 321
+                            </li>
+                        </small>
+                    </div>
+                    <div class="col-md">
+                        <small class="text-muted">
+                            <h1 style="color:white">
+                                CROCE ROSSA ITALIANA MACERATA
+                            </h1>
+
+                        </small>
+                    </div>
+                    <div class="col-md-auto">
+                        <small class="text-muted">
+                            <li>
+                                Ufficio Trasporti: 333 45 86 125
+                            </li>
+                            <li>
+                                Presidente: 333 45 86 125
+                            </li>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 </html>
