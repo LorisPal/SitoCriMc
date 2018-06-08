@@ -94,7 +94,7 @@ app.post('/contatti/richiediAmbulanza', function (req, res) {
     var selettore = req.body.trasporto;
     switch (selettore) {
         case "programmato":
-            output = `
+            template = `
         <h1>Croce Rossa Macerata</h1>
         <h3>Modulo richiesta Ambulanza Programmato</h3>
         <ul>
@@ -108,7 +108,7 @@ app.post('/contatti/richiediAmbulanza', function (req, res) {
             break;
 
         case "sportivo":
-            output = `
+            template = `
         <h1>Croce Rossa Macerata</h1>
         <h3>Modulo richiesta Ambulanza Sportiva</h3>
         <ul>
@@ -125,22 +125,22 @@ app.post('/contatti/richiediAmbulanza', function (req, res) {
 
     // create reusable transporter object using the default SMTP transport
     const transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com', //smtp.provider_email
-        port: 465,
+        host: '', //smtp.provider_email
+        port: provider.port,
         SSL: true, //see the provider smtp configuration
         auth: {
-            user: 'generalle913@gmail.com', //account user email
-            pass: 'parabellum3' //user email pass
+            user: '', //account user email
+            pass: '' //user email pass
         }
     });
 
     // setup email data with unicode symbols
     let mailOptions = {
-        from: 'generalle913@gmail.com', // sender address
-        to: 'palm88@hotmail.it', // list of receivers
-        subject: 'richiesta ambulanza', // Subject line
+        from: '', // sender address
+        to: '', // list of receivers
+        subject: '', // Subject line
         text: '', // plain text body
-        html: output // html body
+        html: template // html body
     };
 
     // send mail with defined transport object
