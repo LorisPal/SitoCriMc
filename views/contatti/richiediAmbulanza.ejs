@@ -26,68 +26,93 @@
                     <a class="nav-link" data-toggle="tab" href="#sportivo">Assistenze Sportive</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#addPost">Assistenze Manifestazioni</a>
+                    <a class="nav-link" data-toggle="tab" href="#manifestazione">Assistenze Manifestazioni</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#addPost">Taxy Sanitario</a>
+                    <a class="nav-link" data-toggle="tab" href="#taxi">Taxy Sanitario</a>
                 </li>
             </ul>
         </div>
         <div class="col-md">
+            <h1>Modulistica</h1>
             <div class="tab-content">
                 <form action="/contatti/richiediAmbulanza" value="programmato" id="programmato" class="tab-pane fade" method="POST">
                     <div>
-                        <h1>Modulo Trasporto programmato</h1>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-default"></span>
                             </div>
-                            <input type="text" class="form-control" name="trasporto" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                            <input type="text" class="form-control" name="trasporto" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                                readonly value="Programmato">
                         </div>
                     </div>
-                    <label>Nome Paziente</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-default"></span>
                         </div>
-                        <input type="text" class="form-control" name="nome" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <input type="text" class="form-control" name="nome" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Nome Paziente">
                     </div>
-                    <label>Cognome Paziente</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-default"></span>
                         </div>
-                        <input type="text" class="form-control" name="cognome" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <input type="text" class="form-control" name="cognome" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                         placeholder="Cognome Paziente">
                     </div>
-                    <label>Prestazione Sanitaria</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-default"></span>
                         </div>
-                        <input type="text" class="form-control" name="prestazione" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <input type="text" class="form-control" name="prestazione" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                         placeholder="Prestazione Sanitaria">
                     </div>
-                    <label>Ora Inizio - Ora Fine</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-default"></span>
                         </div>
-                        <input type="text" class="form-control" name="ora" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <input type="text" class="form-control" name="oraInizio" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                         placeholder="Ora inizio">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                        </div>
+                        <input type="text" class="form-control" name="oraFine" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                         placeholder="Ora fine">
                     </div>
-                    <label>Indirizzo/Struttura Partenza</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-default"></span>
                         </div>
-                        <input type="text" class="form-control" name="partenza" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <input type="text" class="form-control" name="partenza" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                         placeholder="Indirizzo/Struttura Partenza">
                     </div>
-                    <label>Indirizzo/Struttura Destinazione</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-default"></span>
                         </div>
-                        <input type="text" class="form-control" name="destinazione" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <input type="text" class="form-control" name="destinazione" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                         placeholder="Indirizzo/Struttura Destinazione">
                     </div>
-                    <button type="submit" class="btn btn-primary-login">Mail</button>
+                    <button type="submit" class="btn btn-primary-login" data-toggle="modal" data-target="#progModal">Mail</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="progModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Richiesta Inviata</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Abbiamo preso in carico la sua richiesta, verrete contattati da un operatore per accettazione del servizio. Grazie per averci
+                                    scelto!
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="/" class="btn btn-primary-home" role="button" aria-pressed="true">Home Page</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </form>
 
 
@@ -96,43 +121,201 @@
 
                 <form action="/contatti/richiediAmbulanza" value="sportivo" id="sportivo" class="tab-pane fade" method="POST">
                     <div>
-                        <h1>Modulo Assistenze Sportive</h1>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                            </div>
+                            <input type="text" class="form-control" name="trasporto" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                                readonly value="Sportivo">
+                        </div>
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-default"></span>
                         </div>
-                        <input type="text" class="form-control" name="trasporto" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <input type="text" class="form-control" name="evento" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Tipologia evento">
                     </div>
-                    <label>Tipologia Evento Sportivo</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-default"></span>
                         </div>
-                        <input type="text" class="form-control" name="evento" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <input type="text" class="form-control" name="luogo" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                         placeholder="Luogo evento">
                     </div>
-                    <label>Luogo Evento</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-default"></span>
                         </div>
-                        <input type="text" class="form-control" name="luogo" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <input type="text" class="form-control" name="indirizzo" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                         placeholder="Indirizzo luogo evento">
                     </div>
-                    <label>Indirizzo Struttura Ospitante</label>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-default"></span>
                         </div>
-                        <input type="text" class="form-control" name="partenza" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <input type="text" class="form-control" name="oraInizio" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Ora inizio">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                        </div>
+                        <input type="text" class="form-control" name="oraFine" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Ora fine">
                     </div>
-                    <label>Ora Inizio - Ora Fine</label>
+                    <button type="submit" class="btn btn-primary-login" data-toggle="modal" data-target="#sportModal">Mail</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="sportModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Richiesta Inviata</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Abbiamo preso in carico la sua richiesta, verrete contattati da un operatore per accettazione del servizio. Grazie per averci
+                                    scelto!
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="/" class="btn btn-primary-home" role="button" aria-pressed="true">Home Page</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+
+
+
+
+
+                <form action="/contatti/richiediAmbulanza" value="manifestazione" id="manifestazione" class="tab-pane fade" method="POST">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-default"></span>
                         </div>
-                        <input type="text" class="form-control" name="ora" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <input type="text" class="form-control" name="trasporto" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                            readonly value="Manifestazione">
                     </div>
-                    <button type="submit" class="btn btn-primary-login">Mail</button>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                        </div>
+                        <input type="text" class="form-control" name="evento" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Tipologia evento">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                        </div>
+                        <input type="text" class="form-control" name="luogo" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                         placeholder="Luogo evento">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                        </div>
+                        <input type="text" class="form-control" name="indirizzo" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                         placeholder="Indirizzo luogo evento">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                        </div>
+                        <input type="text" class="form-control" name="oraInizio" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Ora inizio">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                        </div>
+                        <input type="text" class="form-control" name="oraFine" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Ora fine">
+                    </div>
+                    <button type="submit" class="btn btn-primary-login" data-toggle="modal" data-target="#manModal">Mail</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="manModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Richiesta Inviata</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Abbiamo preso in carico la sua richiesta, verrete contattati da un operatore per accettazione del servizio. Grazie per averci
+                                    scelto!
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="/" class="btn btn-primary-home" role="button" aria-pressed="true">Home Page</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+
+
+
+
+                <form action="/contatti/richiediAmbulanza" value="taxi" id="taxi" class="tab-pane fade" method="POST">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                        </div>
+                        <input type="text" class="form-control" name="trasporto" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                            readonly value="Taxi Sanitario">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                        </div>
+                        <input type="text" class="form-control" name="nome" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Nome Paziente">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                        </div>
+                        <input type="text" class="form-control" name="cognome" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                         placeholder="Cognome Paziente">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                        </div>
+                        <input type="text" class="form-control" name="partenza" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                         placeholder="Indirizzo Partenza">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                        </div>
+                        <input type="text" class="form-control" name="oraInizio" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Ora Partenza">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                        </div>
+                        <input type="text" class="form-control" name="destinazione" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                         placeholder="Indirizzo Desinazione">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default"></span>
+                        </div>
+                        <input type="text" class="form-control" name="oraFine" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Ora Arrivo">
+                    </div>
+                    <button type="submit" class="btn btn-primary-login" data-toggle="modal" data-target="#taxiModal">Mail</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="taxiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Richiesta Inviata</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Abbiamo preso in carico la sua richiesta, verrete contattati da un operatore per accettazione del servizio. Grazie per averci
+                                    scelto!
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="/" class="btn btn-primary-home" role="button" aria-pressed="true">Home Page</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </form>
 
                 <a href="/" class="btn btn-primary-home" role="button" aria-pressed="true">Home Page</a>

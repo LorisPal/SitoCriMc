@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
     crossorigin="anonymous">
   <link rel="stylesheet" href="home/amministrazione.css">
-  
+
 
   <title>Hello, world!</title>
 </head>
@@ -38,74 +38,202 @@
 
   <div class="row">
     <div class="col-md">
-      <ul class="nav nav-pills nav-fill" >
-        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#addCourse">Aggiungi un Corso</a></li>
-        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#addPost">Aggiungi un Post</a></li>
+      <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#addCourse">Aggiungi un Corso</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#manageCourse">Gestisci i Corsi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#addPost">Aggiungi un Post</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#showProg">Visualizza Richieste Programmati</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#showEvent">Visualizza Richieste Eventi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#showTaxi">Visualizza Richieste Taxi Sanitario</a>
+        </li>
       </ul>
     </div>
+
+
     <div class="col-md">
       <div class="tab-content">
         <form action="/notizie/new" id="addPost" class="tab-pane fade" method="POST">
-        <div class="form-group">
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" name="titolo" placeholder="Recipient's username" aria-label="Recipient's username"
-              aria-describedby="basic-addon2">
-          </div>
-          <div class="input-group-prepend">
-            <textarea name="testo" id="testo" cols="30" rows="10" class="form-control" name="testo" placeholder="Recipient's username"
-              aria-label="Recipient's username" aria-describedby="basic-addon2"></textarea>
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="submit">Button</button>
+          <div class="form-group">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" name="titolo" placeholder="Titolo Post" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            </div>
+            <div class="input-group mb-3">
+              <input type="text" id="data" class="form-control" name="data" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+                readonly value="data">
+            </div>
+            <div class="input-group-prepend">
+              <textarea name="testo" id="testo" cols="30" rows="10" class="form-control" name="testo" placeholder="Scrivi un post" aria-label="Recipient's username"
+                aria-describedby="basic-addon2"></textarea>
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit">Pubblica</button>
+              </div>
             </div>
           </div>
+        </form>
+
+
+        <form action="/home/amministrazione" id="addCourse" class="tab-pane fade" method="POST">
+          <div class="form-group">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" name="nomec" placeholder="Nome Corso" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            </div>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" name="istruttore" placeholder="Istruttore" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            </div>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" name="inizio" placeholder="Inizio Corso" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            </div>
+            <div class="input-group mb-3">
+              <select id="rquisiti" name="requisiti" class="form-control">
+                <option selected>Requisiti...</option>
+                <option>BLSD</option>
+                <option>Corso Base</option>
+                <option>Corso Estricatori</option>
+                <option>Corso Arrampicata</option>
+              </select>
+            </div>
+            <div class="input-group-prepend">
+              <textarea name="descrizione" id="descrizione" cols="30" rows="10" class="form-control" name="a" placeholder="Descrizione"
+                aria-label="Recipient's username" aria-describedby="basic-addon2"></textarea>
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit">Aggiungi</button>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <form action="/home/amministrazione" id="manageCourse" class="tab-pane fade" method="POST">
+          <% richieste_corsi.forEach(function(dati4) { %>
+            <div class="row">
+              <div class="col-md" style="display: -webkit-box;">
+                <ul>
+                  <li>Nome Corso:
+                    <%=dati4.nomeCorso %>
+                  </li>
+                  <li>Istruttore:
+                    <%=dati4.istruttore %>
+                  </li>
+                  <li>Data del Corso:
+                    <%=dati4.inizio %>
+                  </li>
+                  <li>Requisiti:
+                    <%=dati4.requisiti %>
+                  </li>
+                  <li>Descrizione:
+                    <%=dati4.descrizione %>
+                  </li>
+                </ul>
+                <div class="col-md">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" id="binding" name="binding" value="<%=dati4.Id %>" formaction="/home/amministrazione/rimuovi"
+                      type="submit">Rimuovi</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% }); %>
+        </form>
+
+        <div id="showProg" class="tab-pane fade">
+
+          <% richieste_ambulanza.forEach(function(dati) { %>
+            <h3>Modulo richiesta Trasporto</h3>
+            <ul>
+              <li>Nome:
+                <%=dati.nome %>
+              </li>
+              <li>Cognome:
+                <%=dati.cognome %>
+              </li>
+              <li>Prestazione:
+                <%= dati.prestazione %>
+              </li>
+              <li>Orari: Inizio:
+                <%= dati.oraInizio %> - Fine:
+                  <%= dati.oraFine %>
+              </li>
+              <li>Struttura/Indirizzo Partenza:
+                <%=dati.partenza %>
+              </li>
+              <li>Struttura/Indirizzo Destinazione:
+                <%= dati.destinazione %>
+              </li>
+            </ul>
+            <% }); %>
         </div>
-      </form>
-      <div id="addCourse" class="tab-pane fade">
-        <h6>Aggiungi Corso</h6>
+
+
+        <div id="showEvent" class="tab-pane fade">
+          <% richieste_ambulanza2.forEach(function(dati2) { %>
+            <h3>Modulo richiesta Trasporto</h3>
+            <ul>
+              <li>Tipologia Evento:
+                <%=dati2.evento %>
+              </li>
+              <li>Luogo:
+                <%=dati2.luogo %>
+              </li>
+              <li>Indirizzo:
+                <%= dati2.indirizzo %>
+              </li>
+              <li>Orari: Inizio:
+                <%= dati2.oraInizio %> - Fine:
+                  <%= dati2.oraFine %>
+              </li>
+            </ul>
+            <% }); %>
+        </div>
+
+        <div id="showTaxi" class="tab-pane fade">
+          <% richieste_ambulanza3.forEach(function(dati3) { %>
+            <h3>Modulo richiesta Trasporto</h3>
+            <ul>
+              <li>Nome:
+                <%=dati3.nome %>
+              </li>
+              <li>Cognome:
+                <%=dati3.cognome %>
+              </li>
+              <li>Partenza da:
+                <%=dati3.partenza %>
+                  alle:
+                  <%= dati3.oraInizio %>
+              </li>
+              <li>Arrivo a:
+                <%= dati3.destinazione %>
+                  alle:
+                  <%= dati3.oraFine %>
+              </li>
+            </ul>
+            <% }); %>
+        </div>
+
+        <form action="/" method="POST">
+          <button type="submit" class="btn btn-primary-login">Logout</button>
+          <a href="/" class="btn btn-primary-home" role="button" aria-pressed="true">Home Page</a>
+        </form>
+
       </div>
-      <form action="/" method="POST">
-        <button type="submit" class="btn btn-primary-login">Logout</button>
-        <a href="/" class="btn btn-primary-home" role="button" aria-pressed="true">Home Page</a>
-      </form>
-      
-      </div>
-      
+
     </div>
     <div class="col-md"></div>
   </div>
 
-  <form action="/send" method="POST">
-    <button type="submit" class="btn btn-primary-login">Mail</button>
-  </form>
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script>
-  /* 
-  function myFunction() {
-    var x = document.createElement("DIV");
-    x.setAttribute("class","container-fluid");
-    x.setAttribute("id","myDiv");
-    x.setAttribute("style", "background-color: pink;");
-    document.body.appendChild(x);
-    
-    var y = document.createElement("INPUT");
-    y.setAttribute("id","myInput");
-    y.setAttribute("type", "text");
-    y.setAttribute("value", "Donald");
-    
-    var c = document.createElement("BUTTON");
-    var e = document.createTextNode("Click me");
-    c.appendChild(e);
-    
-    
-    x.appendChild(y);
-    x.appendChild(c);
-  }
-  */
-
+    var data = new Date();
+    document.getElementById("data").value = data;
   </script>
-
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"

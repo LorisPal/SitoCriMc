@@ -5,6 +5,28 @@
 </head>
 <body>
     <h1>CORSI DI FORMAZIONE</h1>
+    
+             <% richieste_corsi.forEach(function(list) { %>   
+             <ul>
+                        <li>Nome Corso:
+                          <%=list.nomeCorso %>
+                        </li>
+                        <li>Istruttore:
+                          <%=list.istruttore %>
+                        </li>
+                        <li>Data del Corso:
+                          <%=list.inizio %>
+                        </li>
+                        <li>Requisiti:
+                            <%=list.requisiti %>
+                        </li>
+                        <li>Descrizione:
+                          <%=list.descrizione %>
+                        </li>
+                      </ul>
+              
+            <% }); %>
+
 </body>
 
 <div class="footer">

@@ -13,3 +13,10 @@
     border-radius: 20px;
     border-width: 1px;
 }
+
+.col-sm-2 a {
+    color: #00000080;
+    background-color: #0000004d;
+    border-color: #000;
+    border-top-width: 0px;
+}

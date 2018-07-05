@@ -10,6 +10,12 @@
     background-color: #ff7373;
 }
 
+.row .input-group select {
+    color: #fefafa;
+    opacity: 1;
+    background-color: #ff7373;
+}
+
 .row .input-group-prepend textarea {
     color: #fefafa;
     opacity: 1;

@@ -33,6 +33,7 @@
   <tbody>
     <div class="row">
       <div class="col-sm-2">
+          <a href="/" class="btn btn-primary-home" role="button" aria-pressed="true">Home Page</a>
       </div>
       <div class="col-md">
         <% notizie_cri.forEach(function(notizie) { %>
@@ -42,7 +43,7 @@
                 <h1 class="display-6">
                   <%=notizie.titolo %>
                 </h1>
-                <p class="lead">data e ora</p>
+                <p class="lead"><%=notizie.data %></p>
                 <hr class="my-4">
                 <p>
                   <%=notizie.testo %>
